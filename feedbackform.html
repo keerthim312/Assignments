@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0;
+            background-color: pink;
+            height: 100vh;
+        }
+        h1 {
+            font-weight: bold;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        form {
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 350px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        label {
+            display: block;
+            margin: 20px 0 5px;
+        }
+        textarea, input[type="number"], input[type="email"], input[type="password"], input[type="url"], select {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 50%;
+            align-items: center;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+             <h1>Feedback Form</h1>
+    <form>
+        <label for="feedback-type">Feedback Type:</label>
+        <select id="feedback-type" name="feedback-type">
+            <option value="general">General</option>
+            <option value="bug-report">Bug Report</option>
+            <option value="feature-request">Feature Request</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6"></textarea>
+
+        <label>Website Rating:</label>
+        <div class="radio-group">
+            <label for="rating-excellent"><input type="radio" id="rating-excellent" name="rating" value="excellent"> Excellent</label>
+            <label for="rating-good"><input type="radio" id="rating-good" name="rating" value="good"> Good</label>
+            <label for="rating-average"><input type="radio" id="rating-average" name="rating" value="average"> Average</label>
+            <label for="rating-poor"><input type="radio" id="rating-poor" name="rating" value="poor"> Poor</label>
+        </div>
+
+        <label for="age">Age (10 to 100):</label>
+        <input type="number" id="age" name="age" min="10" max="100">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password (min 8 characters):</label>
+        <input type="password" id="password" name="password" minlength="8">
+
+        <label for="website">Website URL (Optional):</label>
+        <input type="url" id="website" name="website">
+
+        <label for="terms"><input type="checkbox" id="terms" name="terms"> I agree to the terms and conditions</label>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
