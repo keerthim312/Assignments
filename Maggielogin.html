@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maggi Login Page</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 80%;
+            margin-bottom: 30px;
+            background-color: #ffcc00;
+        }
+
+        .sidebar nav ul {
+            list-style-type: none;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .menu-icon {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        /* Content Section Styles */
+        .content {
+            width: 80%;
+            background: brown;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .social-links a img {
+            width: 40px;
+            margin: 0 10px;
+        }
+
+        .language-selector button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .footer-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 10px 0;
+            display: block;
+            font-size: 16px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <img src="https://pps.whatsapp.net/v/t61.24694-24/258909115_472846814226364_6994799704223576835_n.jpg?ccb=11-4&oh=01_Q5AaID9R4EVkOV0pZk4HMSyAvV_gDDW5WRpV_WEt7PsMx3xR&oe=6714BE34&_nc_sid=5e03e0&_nc_cat=109" alt="Maggi Logo" class="logo">
+        
+        <nav>
+            <ul>
+                <li>
+                    <img src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="Recipe Icon" class="menu-icon">
+                    <a href="#">Recipes</a>
+                </li>
+                <li>
+                    <img src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="Maggi Icon" class="menu-icon">
+                    <a href="#">Maggi</a>
+                </li>
+                <li>
+                    <img src="https://www.maggi.in/sites/default/files/2022-12/LogoMealPlanner_0.svg" alt="Menu Plan Icon" class="menu-icon">
+                    <a href="#">My Menu Plan</a>
+                </li>
+                <li>
+                    <img src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="Search Icon" class="menu-icon">
+                    <a href="#">Search</a>
+                </li>
+                <li>
+                    <img src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="Login" class="menu-icon">
+                    <a href="#">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <div class="social-links">
+            <a href="#"><img src="https://www.maggi.in/sites/default/files/2020-01/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="https://www.maggi.in/sites/default/files/2020-01/youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="https://www.maggi.in/sites/default/files/2020-02/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="https://www.maggi.in/sites/default/files/2020-03/Twitter%20%281%29.svg" alt="Twitter"></a>
+        </div>
+
+        <div class="language-selector">
+            <button>EN</button>
+            <button>HI</button>
+            <button>MR</button>
+            <button>TE</button>
+            <button>KN</button>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Copyright</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+</html>
