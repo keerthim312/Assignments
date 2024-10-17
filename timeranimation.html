@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Timer Animation</title>
+    <style>
+        /* Basic styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: brown;
+            color: #f1f1f1;
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+        }
+
+        /* Container for the timer */
+        .timer-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Styling for the fixed time parts */
+        .fixed-time {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Rolling numbers section */
+        .rolling-numbers {
+            overflow: hidden;
+            height: 60px; /* Adjust to match the font size */
+            width: 80px;  /* Optional: For better alignment */
+            position: relative;
+        }
+
+        .rolling-numbers span {
+            display: block;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        /* Keyframes for rolling effect from 03 to 13 */
+        @keyframes roll {
+            0% { transform: translateY(0); }          /* 03 */
+            10% { transform: translateY(-60px); }     /* 04 */
+            20% { transform: translateY(-120px); }    /* 05 */
+            30% { transform: translateY(-180px); }    /* 06 */
+            40% { transform: translateY(-240px); }    /* 07 */
+            50% { transform: translateY(-300px); }    /* 08 */
+            60% { transform: translateY(-360px); }    /* 09 */
+            70% { transform: translateY(-420px); }    /* 10 */
+            80% { transform: translateY(-480px); }    /* 11 */
+            90% { transform: translateY(-540px); }    /* 12 */
+            100% { transform: translateY(-600px); }   /* 13 */
+        }
+
+        /* Apply the animation to the rolling numbers */
+        .rolling-numbers div {
+            position: absolute;
+            animation: roll 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <span class="fixed-time">12</span> :
+        <span class="fixed-time">15</span> :
+        <div class="rolling-numbers">
+            <div>
+                <span>03</span>
+                <span>04</span>
+                <span>05</span>
+                <span>06</span>
+                <span>07</span>
+                <span>08</span>
+                <span>09</span>
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
