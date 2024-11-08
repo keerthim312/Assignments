@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>To-Do List App</title>
+       <link rel="stylesheet" href="style.css">
+   </head>
+   <style>
+    body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       font-family: Arial, sans-serif;
+   }
+
+   .todo-app {
+       text-align: center;
+       width: 300px;
+   }
+
+   #task-list li {
+       display: flex;
+       justify-content: space-between;
+       padding: 8px;
+       margin-top: 5px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+   }
+
+   .completed {
+       text-decoration: line-through;
+       color: gray;
+   }
+   </style>
+   <body>
+       <div class="todo-app">
+           <h1>To-Do List</h1>
+           <input type="text" id="task-input" placeholder="Add a new task">
+           <button id="add-task">Add Task</button>
+           <ul id="task-list"></ul>
+       </div>
+       <script>
+        const taskInput = document.getElementById('task-input');
+   const taskList = document.getElementById('task-list');
+
+   function loadTasks() {
+       const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+       tasks.forEach(task => addTaskToDOM(task.text, task.completed));
+   }
+
+   function saveTasks() {
+       const tasks = [];
+       document.querySelectorAll('#task-list li').forEach(task => {
+           tasks.push({ text: task.innerText, completed: task.classList.contains('completed') });
+       });
+       localStorage.setItem('tasks', JSON.stringify(tasks));
+   }
+   function addTaskToDOM(text, completed = false) {
+       const taskItem = document.createElement('li');
+       taskItem.textContent = text;
+       if (completed) taskItem.classList.add('completed');
+
+       taskItem.addEventListener('click', () => {
+           taskItem.classList.toggle('completed');
+           saveTasks();
+       });
+       taskItem.addEventListener('dblclick', () => {
+           taskItem.remove();
+           saveTasks();
+       });
+
+       taskList.appendChild(taskItem);
+       saveTasks();
+   }
+
+   document.getElementById('add-task').addEventListener('click', () => {
+       if (taskInput.value.trim()) {
+           addTaskToDOM(taskInput.value);
+           taskInput.value = '';
+       }
+   });
+
+   loadTasks();
+    </script>
+   </body>
+   </html>
+   
